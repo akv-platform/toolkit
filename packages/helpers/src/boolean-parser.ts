@@ -29,8 +29,8 @@ export const parseBoolean = (
   }
 
   if (typeof value === 'string') {
-    if (/^-?0+(\.?0+)?$/.test(value)) return false
+    if (Number(value) === 0) return false
   }
 
-  return !!value
+  return Boolean(value)
 }
